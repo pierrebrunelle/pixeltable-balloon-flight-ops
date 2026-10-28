@@ -1,7 +1,7 @@
 """Seed the balloon flight log: 4 envelopes, and 3 batch files of flights in data/ for `cli.py import`.
 
     python seed.py            # inserts envelopes, writes data/batch_01.json .. batch_03.json
-    BALLOONS_DIR=pxt://<org>:<db>/balloons python seed.py   # same, on a Pixeltable Cloud database
+    BALLOONS_DIR=pxt://<org>:<db> python seed.py            # same, on a Pixeltable Cloud database
 """
 
 from __future__ import annotations
@@ -58,7 +58,7 @@ def flights_for(batch: str, start: dt.date, days: int, rng: random.Random) -> li
 
 
 def main() -> None:
-    catalog_dir = os.environ.get('BALLOONS_DIR', 'balloons')  # or pxt://<org>:<db>/balloons
+    catalog_dir = os.environ.get('BALLOONS_DIR', 'balloons')  # or pxt://<org>:<db>
     TableModel.bind_all(catalog_dir)
     t = pxt.get_table(f'{catalog_dir}/envelopes')
     if t.count() == 0:

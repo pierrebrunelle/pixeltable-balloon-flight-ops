@@ -8,8 +8,8 @@
     python cli.py fingerprint [--db URI]       # recompute the project fingerprint with the public helpers
 
 Set BALLOONS_DIR to use another catalog directory (default: balloons). Point PIXELTABLE at a
-Pixeltable Cloud database with `pxt schema update app.py pxt://<org>:<db>/balloons` and
-BALLOONS_DIR=pxt://<org>:<db>/balloons.
+Pixeltable Cloud database with `pxt schema update app.py pxt://<org>:<db>` and
+BALLOONS_DIR=pxt://<org>:<db>.
 """
 
 from __future__ import annotations
